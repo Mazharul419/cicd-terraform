@@ -2,7 +2,7 @@ name: Terraform CI
 
 description: On push to main branch, validate and plan Terraform changes
 
-# Trigger the workflow on push or pull request to main branch
+# Trigger the workflow on push to main branch
 on:
   push:
     branches:
@@ -15,9 +15,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Download Terraform CLI
-        uses: actions/setup-terraform@v2
+        uses: actions/setup-terraform@v3
         with:
           terraform_version: 1.13.4
+      - name: Terraform Format
+        run: terraform fmt
       - name: Terraform Init
         run: terraform init
       - name: Terraform Validate
