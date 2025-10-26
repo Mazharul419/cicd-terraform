@@ -1,0 +1,19 @@
+name: Terraform CI
+
+description: On push to main branch, validate and plan Terraform changes
+
+# Trigger the workflow on push or pull request to main branch
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Download Terraform CLI
+        uses: actions/setup-terraform@v2
+        

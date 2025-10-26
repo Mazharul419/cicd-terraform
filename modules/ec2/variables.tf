@@ -3,11 +3,12 @@ variable "instance_type" {
   default = "t3.micro"
 }
 
-locals {
-  ami     = "ami-0a716d3f3b16d290c"
+variable "ami" {
+  type = string
+  default     = "ami-0a716d3f3b16d290c"
 }
 
 output "instance_id" {
   description = "The id of the EC2 instance"
-  value = aws_instance.import.id
+  value = aws_instance.this.id
 }
