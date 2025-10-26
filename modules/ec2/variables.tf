@@ -1,11 +1,11 @@
 variable "instance_type" {
   type    = string
-  default = "t3.micro"
+  default = "t2.micro"
 }
 
 variable "ami" {
   type = string
-  default     = "ami-0a716d3f3b16d290c"
+  default     = "ami-046c2381f11878233"
 }
 
 output "instance_id" {
