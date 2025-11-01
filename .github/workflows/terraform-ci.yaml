@@ -1,6 +1,6 @@
 name: Terraform CI
 
-description: On push to main branch, validate and plan Terraform changes
+description: On push to main branch, format and validate Terraform changes
 
 # Trigger the workflow on push to main branch
 on:
